@@ -1,18 +1,26 @@
+/* =====================
+   RESET & BASE
+   ===================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #f5f7fa;
     color: #333;
     line-height: 1.6;
 }
 
-/* HEADER */
-
+/* =====================
+   HEADER
+   ===================== */
 header {
     background: linear-gradient(135deg, #0f172a, #1e293b);
     color: white;
@@ -27,6 +35,9 @@ header {
     object-fit: cover;
     border: 5px solid white;
     margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 header h1 {
@@ -39,6 +50,7 @@ header h1 {
     color: #38bdf8;
     font-weight: 600;
     min-height: 30px;
+    margin-bottom: 10px;
 }
 
 .header-links {
@@ -50,15 +62,16 @@ header h1 {
     color: white;
     margin: 0 15px;
     font-weight: 600;
-    transition: 0.3s;
+    transition: color 0.3s;
 }
 
 .header-links a:hover {
     color: #38bdf8;
 }
 
-/* MAIN CONTAINER */
-
+/* =====================
+   MAIN CONTAINER
+   ===================== */
 .container {
     width: 90%;
     max-width: 1200px;
@@ -66,8 +79,9 @@ header h1 {
     padding: 40px 0;
 }
 
-/* SECTIONS */
-
+/* =====================
+   SECTIONS
+   ===================== */
 section {
     margin-bottom: 40px;
 }
@@ -80,44 +94,59 @@ section h2 {
     font-size: 2rem;
 }
 
-/* CARD */
-
+/* =====================
+   CARD
+   ===================== */
 .card {
     background: white;
     padding: 25px;
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 20px;
 }
 
 .card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
 .card h3 {
     color: #2563eb;
     margin-bottom: 10px;
+    font-size: 1.1rem;
 }
 
 .card p {
     margin-bottom: 10px;
 }
 
-/* GRID */
+.card p:last-child {
+    margin-bottom: 0;
+}
 
+/* =====================
+   GRID
+   ===================== */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 
-/* SKILLS */
+.grid .card {
+    margin-bottom: 0;
+}
 
+/* =====================
+   SKILLS
+   ===================== */
 .skills-list {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 20px;
+    margin-top: 10px;
 }
 
 .skill-item {
@@ -126,15 +155,17 @@ section h2 {
     padding: 8px 14px;
     border-radius: 20px;
     font-size: 14px;
-    transition: 0.3s;
+    transition: background 0.3s;
+    cursor: default;
 }
 
 .skill-item:hover {
     background: #1d4ed8;
 }
 
-/* LISTS */
-
+/* =====================
+   LISTS
+   ===================== */
 ul {
     padding-left: 20px;
 }
@@ -143,14 +174,9 @@ li {
     margin-bottom: 8px;
 }
 
-/* ACHIEVEMENT CARDS */
-
-.grid .card {
-    height: 100%;
-}
-
-/* FOOTER */
-
+/* =====================
+   FOOTER
+   ===================== */
 footer {
     background: #0f172a;
     color: white;
@@ -162,10 +188,10 @@ footer p {
     margin: 5px 0;
 }
 
-/* RESPONSIVE */
-
+/* =====================
+   RESPONSIVE
+   ===================== */
 @media (max-width: 768px) {
-
     header h1 {
         font-size: 2rem;
     }
@@ -186,10 +212,27 @@ footer p {
     .card {
         padding: 20px;
     }
+
+    .header-links a {
+        display: inline-block;
+        margin: 5px 8px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
 }
 
-/* SMOOTH SCROLL */
+@media (max-width: 480px) {
+    header {
+        padding: 30px 15px;
+    }
 
-html {
-    scroll-behavior: smooth;
+    .container {
+        width: 95%;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+    }
 }
